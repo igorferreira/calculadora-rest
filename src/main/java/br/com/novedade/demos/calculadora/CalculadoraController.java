@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/rest/v1/calculadora")
 public class CalculadoraController {
 	
+
     @GetMapping(value = "soma", produces = "application/json")
     public Map somar(@RequestParam("valor1") Integer valor1,@RequestParam("valor2")Integer valor2 ) {
     	

@@ -21,6 +21,8 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target> <!-- REQUIRED -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<appengine.maven.plugin>1.3.2</appengine.maven.plugin>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 	</properties>
 
@@ -101,7 +103,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- @passo #7- adicionar plugin do google cloud tools -->
+			<!-- @passo #7- adicionar plugin do google appengine -->
 			<!-- [START cloudplugin] -->
 			<plugin>
      			<groupId>com.google.appengine</groupId>

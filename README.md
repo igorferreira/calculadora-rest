@@ -104,6 +104,18 @@ public class ServletInitializer extends SpringBootServletInitializer {
 	<!-- [END cloudplugin] -->
 ```
 
+pode ser usado o appengine plugin:
+
+```xml
+	<plugin>
+		<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-maven-plugin</artifactId>
+		<version>1.9.64</version>
+		<configuration>
+		</configuration>
+	</plugin>
+```
+
 ## Para testar execute
 
 ```sh
