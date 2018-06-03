@@ -1,5 +1,6 @@
 package br.com.novedade.demos.calculadora;
 
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,6 +18,8 @@ public class CalculadoraApplication {
     	
     	Map<String,Object> ret = new HashMap<String,Object>();
     	ret.put("status",  "UP");
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        ret.put("hora",  timestamp.toString());
         return ret;
     }
 
