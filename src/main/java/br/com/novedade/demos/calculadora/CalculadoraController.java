@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CalculadoraController {
 	
     @GetMapping(value = "soma", produces = "application/json")
-    public Map consultarCoodenadas(@RequestParam("valor1") Integer valor1,@RequestParam("valor2")Integer valor2 ) {
+    public Map somar(@RequestParam("valor1") Integer valor1,@RequestParam("valor2")Integer valor2 ) {
     	
     	Map<String,Object> ret = new HashMap<String,Object>();
     	ret.put("sentenca",  valor1 + " + " + valor2);

@@ -8,7 +8,7 @@
 	<artifactId>calculadora</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -27,7 +27,7 @@
 	</properties>
 
 	<dependencies>
-	
+
 		<!-- @passo #1- remover tomcat pois o appengine usa jetty -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -45,12 +45,11 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-		<!-- @passo #2- remover devtools pois incompative  -->
+		<!-- @passo #2- remover devtools pois incompative -->
 		<!-- Incompativel com appengine -->
 		<!-- <dependency> -->
 		<!-- <groupId>org.springframework.boot</groupId> -->
 		<!-- <artifactId>spring-boot-devtools</artifactId> -->
-		<!-- <version>1.5.13.RELEASE</version> -->
 		<!-- <scope>runtime</scope> -->
 		<!-- </dependency> -->
 
@@ -85,7 +84,7 @@
 
 	<build>
 		<plugins>
-			
+
 			<!-- @passo #5- adicionar o repackage por causa do war no plugin spring-boot-maven -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -97,7 +96,8 @@
 						</goals>
 					</execution>
 				</executions>
-			<!-- @passo #6- adicionar flag para nao falhar na falta do web.xml no plugin spring-boot-maven por causa do war -->
+				<!-- @passo #6- adicionar flag para nao falhar na falta do web.xml no 
+					plugin spring-boot-maven por causa do war -->
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
@@ -117,7 +117,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
-				<version>2.5</version>
+				<version>2.5</version><!--$NO-MVN-MAN-VER$ -->
 				<executions>
 					<execution>
 						<phase>compile</phase>
@@ -133,6 +133,27 @@
 						<exclude>com.google.guava:guava</exclude> <!-- avoid android version -->
 					</excludes>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.0.0-M1</version><!--$NO-MVN-MAN-VER$ -->
+				<executions>
+					<execution>
+						<id>enforce-maven</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireMavenVersion>
+									<version>3.0</version>
+								</requireMavenVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 
 		</plugins>
