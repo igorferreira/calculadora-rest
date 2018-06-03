@@ -118,7 +118,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 ## Para testar execute
 
-* com o pluing ``com.google.cloud.tools```  use:
+* com o pluing ```com.google.cloud.tools``` use:
 
 ```sh
  mvn clean appengine:run
@@ -140,7 +140,7 @@ Para operar o servidor de teste
 
 ## Para deploy
 
-* com o pluing ```com.google.cloud.tools```  use:
+* com o pluing ```com.google.cloud.tools``` use:
 
 ```sh
  mvn clean appengine:deploy
